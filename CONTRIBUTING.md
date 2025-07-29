@@ -1,66 +1,35 @@
-You're absolutely right — the best CONTRIBUTING.md files are written in a task-oriented, "How do I..." style to help contributors quickly find and follow practical steps.
-
-Let me now rewrite your CONTRIBUTING.md using a "How to" format, tailored to your SailPoint IIQ project:
-
-
----
-
-✅ CONTRIBUTING.md (How-To Style)
-
-# Contributing to the SailPoint IIQ Project
-
-Welcome! This guide helps you contribute safely and consistently to this repository. Please follow the instructions below for creating branches, writing commits, raising pull requests, and handling hotfixes.
-
----
-
 ## How do I start working on a new feature or bug?
 
-1. Make sure you're on the latest `dev` branch:
+* Make sure you're on the latest `dev` branch:
 
 ```bash
 git checkout dev
 git pull origin dev
+```
 
-2. Create a new feature or bugfix branch:
+* Create a new feature or bugfix branch:
 
-
-
+```bash
 git checkout -b feature/SSB-123-add-xyz-app
 # or
 git checkout -b bugfix/SSB-456-fix-account-correlation
+```
+* Branch naming format: **`<type>`/`<story-id>`-`<short-description>`**
+* Types: feature, bugfix, hotfix
+* Use lowercase and hyphens. Avoid long or vague branch names.
 
-Branch naming format:
+## How should I write commit messages?
 
-<type>/<story-id>-<short-description>
+* Each commit must start with the story ID and describe the change clearly.
+* Format: `<story-id>`: `<what the commit does, in imperative mood>`
+* Examples:
 
-Types: feature, bugfix, hotfix
+> * SSB-123: Add provisioning plan for XYZ app
+> * SSB-456: Fix null pointer in account aggregation
 
-Use lowercase and hyphens. Avoid long or vague branch names.
+* Avoid commits like misc fixes, final changes, or wip.
 
-
----
-
-How should I write commit messages?
-
-Each commit must start with the story ID and describe the change clearly.
-
-Format:
-
-<story-id>: <what the commit does, in imperative mood>
-
-Examples:
-
-SSB-123: Add provisioning plan for XYZ app
-
-SSB-456: Fix null pointer in account aggregation
-
-
-Avoid commits like misc fixes, final changes, or wip.
-
-
----
-
-How do I keep my branch updated?
+## How do I keep my branch updated?
 
 Before pushing or creating a PR, always rebase onto the latest dev:
 
